@@ -19,27 +19,27 @@
             <div class="logo">Have I <span>Seen</span> It Yet?</div>
         </nav>
             <div class="row" id="main-display">
-                <div class="col-lg-4 col-md-6 media-block">
+                <!--<div class="col-lg-4 col-md-6 media-block">
                     <img src="img/test.jpg" alt="" class="responsive-img">
-                    <span class="title">
-                        Lucy
-                    </span>
-                </div>
-
-                <div class="col-lg-4 col-md-6 media-block">
-                    <img src="img/test2.jpg" alt="" class="responsive-img">
-                    <span class="title">
-                        Guardians of The Galaxy
-                    </span>
-                </div>
-
-                <div class="col-lg-4 col-md-6 media-block">
-                    <img src="img/test3.jpg" alt="" class="responsive-img">
-                    <span class="title">
-                        Get On Up
-                    </span>
-                </div>
+                    <div class="title">
+                        <h3>Lucy</h3>
+                    </div>
+                </div>-->
             </div><!-- CLOSE GRID WRAPPER -->
         </div><!-- CLOSE CONTAINER -->
+        <script type="x-handle-bars" id="media-template">
+            {{#each this}}
+                <div class="col-lg-4 col-md-6 media-block">
+                    <img src="img/{{backdrop}}.jpg" alt="" class="responsive-img">
+                    <div class="meta">
+                        <h3 class="title">{{title}}</h3>
+                        <p class="synopsis">{{synopsis}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        </script>
+        <script src="js/reqwest.min.js"></script>
+        <script src="js/handlebars-v1.3.0.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

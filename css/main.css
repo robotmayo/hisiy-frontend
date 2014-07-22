@@ -1,3 +1,5 @@
+
+
 html,body{
     font-size: 18px;
 }
@@ -22,7 +24,9 @@ nav .logo span{
 
 .responsive-img {
     width : 100%;
+    min-height: auto;
 }
+
 .row{
     margin : 0;
 }
@@ -32,22 +36,62 @@ nav .logo span{
 }
 
 #main-display [class*="col-"] {
-    padding-left: 1px;
+    padding-left: 0;
     padding-right: 0;
 }
 
 .media-block {
     position: relative;
+    overflow: hidden;
 }
 
-.media-block .title{
+.media-block .meta{
     position: absolute;
     bottom : 0;
-    left: 1px;
-    background: red;
+}
+
+.media-block .meta .title{
     padding : .1em .4em;
-    font-size: 2.5em;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 70%;
+    font-size: 1.5em;
+    background: orange;
+    display: inline-block;
+}
+
+.media-block .meta .synopsis {
+    background: red;
+    margin : 0;
+    height: 150px;
+    margin-bottom: -150px;
+    transition : margin 1s;
+}
+
+.media-block:hover .meta .synopsis {
+    margin : 0;
+    transition : margin 1s easeInCubic;
+}
+
+.media-block h3{
+    margin: 0;
+}
+
+@media (min-width: 1200px) {
+    #main-display .media-block{
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    #main-display .media-block:nth-child(3n-7){
+        
+    }
+
+    #main-display .media-block:nth-child(3n+1){
+        left: -1px;
+    }
+
+    #main-display .media-block:nth-child(3n+3){
+        padding-right: 0;
+    }
+    .media-block .meta{
+        left: 1px;
+    }
 }
