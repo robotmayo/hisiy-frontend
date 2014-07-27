@@ -8,17 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-
+        <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid clear-sticky-nav" id="home">
         <nav>
             <div class="logo">Have I <span>Seen</span> It Yet?</div>
         </nav>
-            <div class="row" id="main-display">
+            <div class="row no-margin" id="main-display">
                 <!--<div class="col-lg-4 col-md-6 media-block">
                     <img src="img/test.jpg" alt="" class="responsive-img">
                     <div class="title">
@@ -27,16 +27,32 @@
                 </div>-->
             </div><!-- CLOSE GRID WRAPPER -->
         </div><!-- CLOSE CONTAINER -->
-        <script type="x-handle-bars" id="media-template">
-            {{#each this}}
-                <div class="col-lg-4 col-md-6 media-block">
-                    <img src="img/{{backdrop}}.jpg" alt="" class="responsive-img">
-                    <div class="meta">
-                        <h3 class="title">{{title}}</h3>
-                        <p class="synopsis">{{synopsis}}</p>
-                    </div>
+        <script type="x-handlebars" id="seen-media-template">
+            <div class="col-lg-4 col-md-6 media-block ">
+                <img src="{{backdrops.large}}" alt="" class="responsive-img">
+                <div class="meta">
+                    <h3 class="title seen">{{title}}</h3>
+                    <p class="synopsis">{{overview}}</p>
                 </div>
-            {{/each}}
+            </div>
+        </script>
+        <script type="x-handlebars" id="unseen-media-template">
+            <div class="col-lg-4 col-md-6 media-block ">
+                <img src="{{backdrops.large}}" alt="" class="responsive-img">
+                <div class="meta">
+                    <h3 class="title unseen">{{title}}</h3>
+                    <p class="synopsis">{{overview}}</p>
+                </div>
+            </div>
+        </script>
+        <script type="x-handlebars" id="watching-media-template">
+            <div class="col-lg-4 col-md-6 media-block ">
+                <img src="{{backdrops.large}}" alt="" class="responsive-img">
+                <div class="meta">
+                    <h3 class="title unseen">{{title}}</h3>
+                    <p class="synopsis">{{overview}}</p>
+                </div>
+            </div>
         </script>
         <script src="js/reqwest.min.js"></script>
         <script src="js/handlebars-v1.3.0.js"></script>

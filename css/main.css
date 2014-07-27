@@ -1,24 +1,28 @@
 
 
 html,body{
-    font-size: 18px;
+    font-size: 16px;
+    background: #170501;
 }
 
 nav {
-    background: red;
+    background: #170501;
     position: fixed;
     top : 0;
     left : 0;
     width : 100%;
     z-index: 999;
+    height: 1.9em;
 }
 nav .logo{
     margin : 0;
-    font-size: 1.8em;
+    font-size: 1.6em;
+    color: #FFA1B8;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav .logo span{
-    background: green;
+    color: #87E0FF;
     display: inline-block;
 }
 
@@ -27,15 +31,23 @@ nav .logo span{
     min-height: auto;
 }
 
-.row{
+.no-margin{
     margin : 0;
 }
-.container-fluid { 
+.seen {
+    background: #87E0FF ;
+}
+
+.unseen {
+    background: #FFA1B8;
+}
+
+.clear-sticky-nav{
     padding : 0;
     padding-top: 1.8em;
 }
 
-#main-display [class*="col-"] {
+#home #main-display [class*="col-"] {
     padding-left: 0;
     padding-right: 0;
 }
@@ -48,21 +60,23 @@ nav .logo span{
 .media-block .meta{
     position: absolute;
     bottom : 0;
+    color : #170501;
 }
 
 .media-block .meta .title{
     padding : .1em .4em;
     font-size: 1.5em;
-    background: orange;
     display: inline-block;
 }
 
 .media-block .meta .synopsis {
-    background: red;
+    color : white;
+    background: #0F040C;
     margin : 0;
     height: 150px;
     margin-bottom: -150px;
     transition : margin 1s;
+    padding: 0 10px;
 }
 
 .media-block:hover .meta .synopsis {
@@ -74,21 +88,56 @@ nav .logo span{
     margin: 0;
 }
 
+.search-result {
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 0px #000;
+    color: white;
+    cursor: pointer;
+}
+
+.search-result .title {
+    font-size: 2em;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 1;
+}
+
+.search-result span {
+    position: relative;
+    z-index: 1;
+}
+button.add-movie{
+    margin-top: 15px;   
+}
+.poster {
+    margin-top : 20px;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
 @media (min-width: 1200px) {
-    #main-display .media-block{
+    #home #main-display .media-block{
         padding-left: 1px;
         padding-right: 1px;
     }
 
-    #main-display .media-block:nth-child(3n-7){
+    #home #main-display .media-block:nth-child(3n-7){
         
     }
 
-    #main-display .media-block:nth-child(3n+1){
+    #home #main-display .media-block:nth-child(3n+1){
         left: -1px;
     }
 
-    #main-display .media-block:nth-child(3n+3){
+    #home #main-display .media-block:nth-child(3n+3){
         padding-right: 0;
     }
     .media-block .meta{
